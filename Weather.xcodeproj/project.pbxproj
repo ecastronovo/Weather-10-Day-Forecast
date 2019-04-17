@@ -54,6 +54,9 @@
 		950CD9652267B90A0094076B /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				950CD97B2267B9310094076B /* Controller */,
+				950CD97A2267B92E0094076B /* View */,
+				950CD9782267B9250094076B /* Model */,
 				950CD9662267B90A0094076B /* AppDelegate.swift */,
 				950CD9682267B90A0094076B /* ViewController.swift */,
 				950CD96A2267B90A0094076B /* Main.storyboard */,
@@ -62,6 +65,27 @@
 				950CD9722267B90B0094076B /* Info.plist */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		950CD9782267B9250094076B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		950CD97A2267B92E0094076B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		950CD97B2267B9310094076B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
