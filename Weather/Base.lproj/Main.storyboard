@@ -54,11 +54,24 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Get Forecast"/>
+                                <connections>
+                                    <action selector="fetchInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XNH-WQ-V2O"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H66-ij-Fpy">
+                                <rect key="frame" x="142" y="264" width="91" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="QXC-e9-jAY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.50772774202098769" green="0.93354969012566691" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LFa-F4-mFM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="34v-mg-DeY"/>
+                            <constraint firstItem="H66-ij-Fpy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3ND-kI-kTr"/>
                             <constraint firstItem="lcl-2C-zeZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4hy-ql-RFZ"/>
                             <constraint firstItem="Zu3-I5-uIh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="70R-L0-NLL"/>
                             <constraint firstItem="Zu3-I5-uIh" firstAttribute="top" secondItem="LFa-F4-mFM" secondAttribute="bottom" constant="8" id="G4I-DW-1Vg"/>
@@ -66,9 +79,13 @@
                             <constraint firstItem="lcl-2C-zeZ" firstAttribute="top" secondItem="Zu3-I5-uIh" secondAttribute="bottom" constant="40" id="Mdm-nn-dQP"/>
                             <constraint firstItem="LFa-F4-mFM" firstAttribute="top" secondItem="GBq-et-Lzx" secondAttribute="bottom" constant="16" id="hKr-LJ-ELH"/>
                             <constraint firstItem="GBq-et-Lzx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tIa-u9-Ihs"/>
+                            <constraint firstItem="H66-ij-Fpy" firstAttribute="top" secondItem="lcl-2C-zeZ" secondAttribute="bottom" constant="20" id="zke-Fc-uh7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cityField" destination="Zu3-I5-uIh" id="8EW-Nv-tm8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
