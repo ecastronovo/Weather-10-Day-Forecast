@@ -13,6 +13,8 @@
 		950CD96C2267B90A0094076B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950CD96A2267B90A0094076B /* Main.storyboard */; };
 		950CD96E2267B90B0094076B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 950CD96D2267B90B0094076B /* Assets.xcassets */; };
 		950CD9712267B90B0094076B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950CD96F2267B90B0094076B /* LaunchScreen.storyboard */; };
+		9527AE6D22683B6C0086DC05 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527AE6C22683B6C0086DC05 /* WeatherData.swift */; };
+		9527AE71226846A90086DC05 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9527AE70226846A90086DC05 /* ForecastTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		950CD96D2267B90B0094076B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		950CD9702267B90B0094076B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		950CD9722267B90B0094076B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9527AE6C22683B6C0086DC05 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		9527AE70226846A90086DC05 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		E58B2E27F3737E9DD79A27B3 /* Pods-Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.release.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,7 +58,6 @@
 				5A7769361B1D9BE74EDA068E /* Pods-Weather.debug.xcconfig */,
 				E58B2E27F3737E9DD79A27B3 /* Pods-Weather.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,7 +86,6 @@
 				950CD97A2267B92E0094076B /* View */,
 				950CD9782267B9250094076B /* Model */,
 				950CD9662267B90A0094076B /* AppDelegate.swift */,
-				950CD9682267B90A0094076B /* ViewController.swift */,
 				950CD96A2267B90A0094076B /* Main.storyboard */,
 				950CD96D2267B90B0094076B /* Assets.xcassets */,
 				950CD96F2267B90B0094076B /* LaunchScreen.storyboard */,
@@ -95,6 +97,7 @@
 		950CD9782267B9250094076B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9527AE6C22683B6C0086DC05 /* WeatherData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +105,7 @@
 		950CD97A2267B92E0094076B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9527AE70226846A90086DC05 /* ForecastTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,6 +113,7 @@
 		950CD97B2267B9310094076B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				950CD9682267B90A0094076B /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,16 +192,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Weather/Pods-Weather-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -211,15 +212,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Weather-checkManifestLockResult.txt",
 			);
@@ -235,7 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9527AE71226846A90086DC05 /* ForecastTableViewCell.swift in Sources */,
 				950CD9692267B90A0094076B /* ViewController.swift in Sources */,
+				9527AE6D22683B6C0086DC05 /* WeatherData.swift in Sources */,
 				950CD9672267B90A0094076B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
