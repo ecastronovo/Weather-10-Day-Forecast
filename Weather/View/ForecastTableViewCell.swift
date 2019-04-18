@@ -11,12 +11,15 @@ import UIKit
 class ForecastTableViewCell: UITableViewCell {
     
     // MARK: IB Outlets
+    
     @IBOutlet weak var forecastDay: UILabel!
     @IBOutlet weak var tempLow: UILabel!
     @IBOutlet weak var tempHigh: UILabel!
     @IBOutlet weak var forecastIcon: UIImageView!
     @IBOutlet weak var forecastDescription: UILabel!
     
+    
+    // MARK: Methods
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +32,7 @@ class ForecastTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // Inserts cell with weather data
     func populateCell(data: WeatherData){
         self.forecastDay.text = "\(data.getDate)"
         self.tempLow.text = "\(data.getLowTemp)"
@@ -36,5 +40,4 @@ class ForecastTableViewCell: UITableViewCell {
         self.forecastIcon.image = data.getIcon
         self.forecastDescription.text = "\(data.getDescription)"
     }
-
 }

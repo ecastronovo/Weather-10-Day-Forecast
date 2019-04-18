@@ -8,7 +8,6 @@
 
 import Alamofire
 import UIKit
-import SwiftyJSON
 
 class ViewController: UIViewController {
     
@@ -24,17 +23,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    // MARK: Variables
-    
+    // MARK: API Variables
     var APIKey:String = "831385389d57f1cdcb4d9760f43a520e"
     var APIParam = "appid="
     var URL:String = "http://api.openweathermap.org/data/2.5/forecast/daily?q="
     var cityName:String = ""
     var URLCountParam: String = "&cnt=10&"
     
+    
+    // MARK: Variables
+    
     var dayForecase: WeatherData!
     var tenDayForecast = [WeatherData]()
-    
     
     
     // MARK: Methods
@@ -56,23 +56,31 @@ class ViewController: UIViewController {
 
         cityName = String(cityField.text!)
         let adjustedCityName = cityName.replacingOccurrences(of: " ", with: "+")
-        let requestURL:String = URL + adjustedCityName + URLCountParam + APIParam + APIKey
-        print(requestURL)
         
+        // Constructed URL
+        let requestURL:String = URL + adjustedCityName + URLCountParam + APIParam + APIKey
+    
+        // Alamofire Request and Error handler
         Alamofire.request(requestURL).responseJSON { (response) in
             let result = response.result
             if let dictionary = result.value as? Dictionary<String, AnyObject> {
                 if let responseCode = dictionary["cod"] as? String{
                     if responseCode != "200"{
-                        let alertController = UIAlertController(title: "Response Error:", message: "Error Code \(responseCode)", preferredStyle: .alert)
+                        var errorMessage = "Error Code \(responseCode)"
+                        if responseCode == "404"{
+                            errorMessage = "City Not Found"
+                        }
+                        let alertController = UIAlertController(title: "Response Error:", message: errorMessage, preferredStyle: .alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
                         self.present(alertController, animated: true, completion: nil)
                         return
                     }
                 }
+                
+                // Call helpers to insert information
                 if let list = dictionary["list"] as? [Dictionary<String,AnyObject>] {
                     self.tenDayForecast.removeAll()
-                    self.updateTableView()
+                    self.updateTableViewName()
                     for li in list {
                         let forecast = WeatherData(dict: li)
                         self.tenDayForecast.append(forecast)
@@ -83,7 +91,8 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateTableView(){
+    //updates Display Name and makes visible
+    func updateTableViewName(){
         displayCityName.isHidden = false
         displayCityName.text = cityName
     }
@@ -93,6 +102,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         callDelegates()
@@ -104,6 +114,7 @@ class ViewController: UIViewController {
     }
 }
 
+//Extention of ViewController to help handle the TableView with TableView's required functions
 extension ViewController:UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

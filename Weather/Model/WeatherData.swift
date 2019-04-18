@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 class WeatherData {
     
@@ -98,6 +97,7 @@ class WeatherData {
     }
     
     // MARK: Getters & default value methods
+    
     var getDate: String {
         if date == nil {
             date = ""
